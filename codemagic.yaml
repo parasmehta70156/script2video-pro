@@ -7,11 +7,11 @@ workflows:
       java: 17
 
     scripts:
-      - name: Fix gradle permission
-        script: chmod +x ./gradlew
+      - name: Clean
+        script: ./gradlew clean
 
       - name: Build APK
-        script: ./gradlew assembleDebug
+        script: ./gradlew assembleDebug --stacktrace
 
     artifacts:
       - app/build/outputs/**/*.apk
