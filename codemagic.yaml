@@ -1,0 +1,14 @@
+workflows:
+  android-workflow:
+    name: Android Build
+    max_build_duration: 60
+    environment:
+      vars:
+        PACKAGE_NAME: "com.example.app"
+      java: 17
+    scripts:
+      - name: Build APK
+        script: |
+          ./gradlew assembleDebug
+    artifacts:
+      - app/build/outputs/**/*.apk
