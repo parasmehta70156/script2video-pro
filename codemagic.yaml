@@ -1,8 +1,6 @@
 workflows:
   android-workflow:
     name: Android Build
-    max_build_duration: 60
-
     environment:
       java: 17
 
@@ -10,11 +8,8 @@ workflows:
       - name: Give permission
         script: chmod +x ./gradlew
 
-      - name: Clean
-        script: ./gradlew clean
-
       - name: Build APK
-        script: ./gradlew assembleDebug --stacktrace
+        script: ./gradlew assembleDebug
 
     artifacts:
       - app/build/outputs/**/*.apk
