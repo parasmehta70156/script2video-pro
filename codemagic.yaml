@@ -5,22 +5,10 @@ workflows:
 
     environment:
       java: 17
-      android_signing:
-        - keystore_reference
-      vars:
-        ANDROID_COMPILE_SDK: "33"
-        ANDROID_TARGET_SDK: "33"
-        ANDROID_MIN_SDK: "24"
 
     scripts:
       - name: Give permission
         script: chmod +x ./gradlew
-
-      - name: Install SDK
-        script: sdkmanager "platforms;android-33" "build-tools;33.0.2"
-
-      - name: Clean
-        script: ./gradlew clean
 
       - name: Build APK
         script: ./gradlew assembleDebug --stacktrace
