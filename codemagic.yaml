@@ -7,6 +7,9 @@ workflows:
       java: 17
 
     scripts:
+      - name: Give permission
+        script: chmod +x ./gradlew
+
       - name: Clean
         script: ./gradlew clean
 
