@@ -20,9 +20,9 @@ public class MainActivity extends Activity {
         root.addView(title); root.addView(sub); root.addView(importBtn); root.addView(autoBtn); root.addView(proBtn); root.addView(status); setContentView(root);
         importBtn.setOnClickListener(v->{Intent i=new Intent(Intent.ACTION_OPEN_DOCUMENT); i.setType("video/*"); i.addCategory(Intent.CATEGORY_OPENABLE); startActivityForResult(i,10);});
         autoBtn.setOnClickListener(v->{status.setText("Auto Edit ready: 9:16 • scene cuts • pause removal • beat-style cuts • transitions • zooms • filters • captions • 1080p render.");});
-        proBtn.setOnClickListener(v->{status.setText("AI Pro: ₹299/month • 20 AI edits/month. Upload → AI analysis → professional short-form edit.");});
+        proBtn.setOnClickListener(v->{status.setText("AI Pro: ₹299/month • 20 AI edits/month. Upload → automatic professional short-form edit.");});
     }
     TextView t(String s,float z,int c){TextView x=new TextView(this);x.setText(s);x.setTextSize(z);x.setTextColor(c);x.setPadding(0,12,0,12);return x;}
-    Button btn(String s){Button b=new Button(this);b.setText(s);b.setTextSize(15);b.setAllCaps(false);root.addView(b);return b;}
+    Button btn(String s){Button b=new Button(this);b.setText(s);b.setTextSize(15);b.setAllCaps(false);return b;}
     @Override protected void onActivityResult(int r,int c,Intent d){super.onActivityResult(r,c,d);if(r==10&&c==RESULT_OK&&d!=null){Uri u=d.getData();status.setText("Video selected. Tap ⚡ Auto Edit to create the automatic edit.\n"+u);}}
 }
