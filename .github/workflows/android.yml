@@ -8,35 +8,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
           cache: gradle
-
       - name: Grant execute permission
-        run: chmod +x ./gradlew || true
-
+        run: chmod +x ./gradlew
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
-
-      - name: Build Release AAB
-        run: ./gradlew bundleRelease
-
+        run: ./gradlew clean assembleDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: debug-apk
+          name: Paras-AI-Video-Editor-fixed-apk
           path: app/build/outputs/apk/debug/*.apk
-
-      - name: Upload AAB
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-aab
-          path: app/build/outputs/bundle/release/*.aab
