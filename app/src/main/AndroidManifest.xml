@@ -1,21 +1,10 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.paras.generatedapp">
-
-    <application
-        android:label="Script2Video Pro"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.paras.videoeditor">
+    <application android:label="Paras AI Video Editor" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
     </application>
-
 </manifest>
