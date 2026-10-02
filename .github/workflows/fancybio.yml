@@ -2,6 +2,8 @@ name: Build FancyBio APK
 on:
   push:
     branches: [ fancybio-build ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 jobs:
   build:
